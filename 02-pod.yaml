@@ -5,6 +5,7 @@ metadata:
   labels:
     project: p1
     environment: dev
-specs:
-  name: nginx
-  image: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
