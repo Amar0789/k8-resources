@@ -3,13 +3,12 @@ kind: ReplicaSet
 metadata:
  name: nginx
  labels:
-  tier: n1
-  environment: prod
+
 
 spec:
   replicas: 3
   selector: 
-    matchlabels:
+    matchLabels:
       tier: n1
       environment: prod
 
