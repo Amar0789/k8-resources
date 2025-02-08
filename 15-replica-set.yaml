@@ -12,13 +12,13 @@ spec:
       type: n1
       environment: prod
 
-template:
-  metadata:
-    labels:
-      type: n1
-      environment: prod
+  template:
+    metadata:
+      labels:
+        type: n1
+        environment: prod
 
-spec:
-  containers:
-    name: nginx
-    image: nginx  
+  spec:
+    containers:
+      name: nginx
+      image: nginx  
