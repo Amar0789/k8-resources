@@ -9,13 +9,13 @@ spec:
   replicas: 3
   selector: 
     matchlabels:
-      type: n1
+      tier: n1
       environment: prod
 
   template:
     metadata:
       labels:
-        type: n1
+        tier: n1
         environment: prod
 
     spec:
