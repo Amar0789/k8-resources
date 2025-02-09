@@ -13,7 +13,7 @@ spec:
     volumeHandle: vol-0323ca486472afe23
 ---
 apiVersion: v1
-kind: PersistentVloumeCliam
+kind: PersistentVloumeClaim
 metadata:
   name: ebs-static
 spec:
