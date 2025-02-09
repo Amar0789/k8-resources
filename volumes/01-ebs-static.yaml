@@ -22,5 +22,5 @@ spec:
   accessModes:
   - ReadriteOnce
   resources:
-  requests:
+   requests:
     storage: 5Gi
