@@ -8,7 +8,7 @@ spec:
   capacity:
     storage: 20Gi
   csi:
-    driver:as-ebi-csi-driver
+    driver: aws-ebi-csi-driver
     fsType: ext4
     volumeHandle: vol-0323ca486472afe23
 
