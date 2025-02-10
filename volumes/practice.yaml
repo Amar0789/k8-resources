@@ -1,5 +1,12 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: expense
+kind: pod
+meatadata:
+  name: pod1
   labels:
+    poroject: expense
+spec:
+- name: nginx
+  image: nginx
+- name: alamlinux
+  image: almalinux
+  commane: "sleep 100"
