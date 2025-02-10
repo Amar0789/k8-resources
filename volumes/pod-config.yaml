@@ -6,9 +6,9 @@ spec:
   containers:
   - name: nginx
     image: nginx
-      env:
-      - name: course
-        valuFrom
-          configMapKeyRef:
-            name: configmap
-            key: course
+    env:
+    - name: course
+      valuFrom
+        configMapKeyRef:
+          name: configmap
+          key: course
