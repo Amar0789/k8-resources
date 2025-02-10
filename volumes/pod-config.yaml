@@ -15,7 +15,7 @@ kind: Service
 metadata:
   name: service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     project: something
     environment: dev
