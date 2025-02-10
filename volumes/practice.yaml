@@ -10,8 +10,8 @@ spec:
     image: nginx
     resources:
       requests:
-        cpu: 100 m
+        cpu: 100 M
         memory: 80 Mi
       limits: 
-        cpu: 120 m
+        cpu: 120 M
         memory: 120 Mi
