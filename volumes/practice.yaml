@@ -8,5 +8,6 @@ spec:
   containers:
   - name: nginx
     image: nginx
-  - name: one
-    image: nginx
+  - name: almalinux
+    image: almalinux
+    command: ["sleep","100"]
