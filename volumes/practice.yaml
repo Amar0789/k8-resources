@@ -13,8 +13,8 @@ spec:
       value: devops
     resources:
       requests:
-        cpu: 100m
+        cpu: 100 m
         memory: 80 Mi
       limits: 
-        cpu: 120m
+        cpu: 120 m
         memory: 120 Mi
