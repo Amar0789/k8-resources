@@ -1,8 +1,19 @@
+# apiVersion: v1
+# kind: pod
+# meatadata:
+#   name: nginx
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+
+
 apiVersion: v1
-kind: pod
-meatadata:
+kind: Pod
+metadata:
   name: nginx
 spec:
   containers:
   - name: nginx
     image: nginx
+    
