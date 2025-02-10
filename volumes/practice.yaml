@@ -11,4 +11,10 @@ spec:
     env:
     - name: course
       value: devops
-      
+    resources:
+      requests:
+        cpu: 100m
+        memory: 80 Mi
+      limits: 
+        cpu: 120m
+        memory: 120 Mi
