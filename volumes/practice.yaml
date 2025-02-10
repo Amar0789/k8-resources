@@ -7,6 +7,6 @@ meatadata:
 spec:
 - name: nginx
   image: nginx
-- name: alamlinux
-  image: almalinux
-  command: "sleep 100"
+# - name: alamlinux
+#   image: almalinux
+#   command: "sleep 100"
