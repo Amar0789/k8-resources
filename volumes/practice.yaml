@@ -3,10 +3,10 @@ kind: pod
 meatadata:
   name: pod1
   labels:
-    poroject: expense
+    project: expense
 spec:
 - name: nginx
   image: nginx
 - name: alamlinux
   image: almalinux
-  commane: "sleep 100"
+  command: "sleep 100"
