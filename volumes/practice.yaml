@@ -3,11 +3,11 @@ kind: pod
 meatadata:
   name: pod1
   labels:
-  project: expense
+    project: expense
 spec:
   containers:
   - name: nginx
     image: nginx
-  # - name: alamlinux
-  #   image: almalinux
-  #   command: "sleep 100"
+  - name: alamlinux
+    image: almalinux
+    command: "sleep 100"
