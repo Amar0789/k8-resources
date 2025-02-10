@@ -3,7 +3,7 @@ kind: pod
 meatadata:
   name: pod1
   labels:
-    project: expense
+  project: expense
 spec:
 - name: nginx
   image: nginx
