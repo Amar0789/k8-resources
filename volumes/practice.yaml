@@ -4,4 +4,4 @@ metadata:
  name: comfigmap
 data:
  - course: devops
-   duration: 120hr
+   duration: "120hr"
