@@ -8,6 +8,9 @@ spec:
   containers:
   - name: nginx
     image: nginx
+    env:
+    - name: course
+      value: devops
     resources:
       requests:
         cpu: 100M
