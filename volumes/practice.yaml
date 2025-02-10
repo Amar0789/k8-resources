@@ -5,8 +5,9 @@ meatadata:
   labels:
   project: expense
 spec:
-- name: nginx
-  image: nginx
-# - name: alamlinux
-#   image: almalinux
-#   command: "sleep 100"
+  containers:
+  - name: nginx
+    image: nginx
+  - name: alamlinux
+    image: almalinux
+    command: "sleep 100"
