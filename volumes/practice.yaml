@@ -3,11 +3,11 @@ kind: Pod
 metadata:
   name: pod
   labels:
-    project: expense
+    project: espense
 spec:
   containers:
   - name: nginx
     image: nginx
   - name: almalinux
-    image: almalinux
+    image: almaliux
     command: ["sleep","100"]
