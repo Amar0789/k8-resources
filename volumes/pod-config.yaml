@@ -21,3 +21,24 @@ spec:
       containers:
       - name: nginx
         image: nginx 
+
+---
+apiVersion: v1
+kind: LoadBalancer
+metadata:
+  name:service
+  labels:
+    env: prod
+    project: expense 
+
+spec:
+  selector:
+    matchLabels:
+     env: prod
+     project: expense    
+
+ports:
+- name: name
+  protocol: TCP
+  port: 80
+  targetPort: 80
