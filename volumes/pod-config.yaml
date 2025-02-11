@@ -1,26 +1,22 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/V1
+kind: ReplicaSet
 metadata: 
-  name: nginx
+  name: sets
   labels:
-    project: something
     environment: dev
+    project: expense
 spec:
-  containers:
-  - name: pod
-    image: nginx
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: service
-spec:
-  type: LoadBalancer
-  selector:
-    project: something
-    environment: dev
-  ports:
-  - name: port
-    protocol: TCP
-    port: 80
-    targetPort: 80
+  selector:   
+    matchLabels:
+      environment: dev
+      project: expense
+
+  template: 
+    metadata:   
+      lebels:  
+        environment: dev
+        project: expense 
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
