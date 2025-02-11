@@ -24,7 +24,7 @@ spec:
 
 ---
 apiVersion: v1
-kind: LoadBalancer
+kind: Service
 metadata:
   name: service
   labels:
@@ -32,13 +32,14 @@ metadata:
     project: expense 
 
 spec:
+  type: LoadBalancer
   selector:
     matchLabels:
      env: prod
      project: expense    
 
-ports:
-- name: name
-  protocol: TCP
-  port: 80
-  targetPort: 80
+  ports:
+  - name: name
+    protocol: TCP
+    port: 80
+    targetPort: 80
