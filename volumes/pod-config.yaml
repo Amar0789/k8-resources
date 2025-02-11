@@ -17,7 +17,7 @@ spec:
       labels:  
         environment: dev
         project: expense 
-  spec:
-    containers:
-    - name: nginx
-      image: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
