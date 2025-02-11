@@ -1,23 +1,24 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
-  name: sets
-  labels:
-    environment: dev
+  name: set
+  labels: 
+    env: prod
     project: expense
 spec:
   replicas: 3
-  selector:   
+  selector: 
     matchLabels:
-      environment: dev
-      project: expense
+      labels:
+        env: prod
+        project: expense  
 
   template: 
-    metadata:   
-      labels:  
-        environment: dev
+    metadata: 
+      labels:
+        env: prod
         project: expense 
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: nginx 
