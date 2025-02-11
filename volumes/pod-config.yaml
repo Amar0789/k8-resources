@@ -14,7 +14,7 @@ spec:
 
   template: 
     metadata:   
-      lebels:  
+      labels:  
         environment: dev
         project: expense 
   spec:
