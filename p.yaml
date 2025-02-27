@@ -11,3 +11,7 @@ spec:
     - name: almalinux
       image: almalinux
       command: ["sleep", "100"]
+      env:
+        - name: course
+          value: devops
+          
