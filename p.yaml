@@ -11,7 +11,10 @@ spec:
     - name: almalinux
       image: almalinux
       command: ["sleep", "100"]
-      env:
-        - name: course
-          value: devops
-          
+      resources:
+        requests:   
+          cpu: 100m
+          memory: 100mi
+        limits: 
+          cpu: 120m
+          memory: 120mi
