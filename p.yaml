@@ -18,3 +18,6 @@ spec:
         limits: 
           cpu: 120M
           memory: 120Mi
+      envFrom:
+        - configMapRef
+          name: nginx-config
