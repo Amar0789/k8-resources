@@ -1,23 +1,16 @@
 apiVersion: v1
-kind: Pod
-metadata:   
+kind: service
+metadata:
   name: expense
-  annotations: 
-    project: dev
+  labels:
+    environment: dev
 spec:
-  containers:
-    - name: nginx
-      image: nginx
-    - name: almalinux
-      image: almalinux
-      command: ["sleep", "100"]
-      resources:
-        requests:   
-          cpu: 100M
-          memory: 100Mi
-        limits: 
-          cpu: 120M
-          memory: 120Mi
-      envFrom:
-        - configMapRef
-          name: nginx-config
+  selector:
+    project: expense
+    environment: dev
+    module: backend
+  ports:
+  - name: svc
+    protocol: TCP
+    port: 80
+    targetPort: 80
