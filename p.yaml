@@ -5,6 +5,7 @@ metadata:
   labels:
     environment: dev
 spec:
+  type: NodePort
   selector:
     project: expense
     environment: dev
