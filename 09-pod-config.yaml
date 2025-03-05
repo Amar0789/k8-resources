@@ -12,7 +12,7 @@ spec:
       #   configMapKeyRef:
       #     name: nginx-config
       #     key: course
-      envFrom:
-      - configMapRef:
-        name: nginx-config
+    envFrom:
+    - configMapRef:
+      name: nginx-config
 
