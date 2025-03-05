@@ -8,10 +8,6 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    resources:
-      requests:
-        cpu: 100M
-        memory: 100Mi
-      limits:
-        cpu: 120M
-        memory: 120Mi      
+    envFrom:
+    - configMapRef:
+      name: nginx-config  
