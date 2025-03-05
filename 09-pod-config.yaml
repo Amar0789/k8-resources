@@ -6,13 +6,14 @@ spec:
   containers:
   - name: nginx
     image: nginx
+    envFrom:
+    - configMapRef:
+        name: nginx-config
     # env:
     # - name: course
       # valueFrom:
       #   configMapKeyRef:
       #     name: nginx-config
       #     key: course
-    envFrom:
-    - configMapRef:
-      name: nginx-config
+
 
