@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: ebs-static
 spec:
-  accessModes:   
+  accessModes:
   - ReadWriteOnce
   capacity:
     storage: 20Gi
@@ -17,51 +17,45 @@ kind: PersistentVolumeClaim
 metadata:
   name: ebs-static
 spec:
-  accessModes:   
-    - ReadWriteOnce
-  storageClassName: ""
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
   volumeName: ebs-static
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 6Gi
+      storage: 5Gi
 ---
 apiVersion: v1
 kind: Pod
 metadata:
   name: ebs-static
   labels:
-    environment: dev
-    project: expense
+    purpose: ebs-static
 spec:
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1d
   containers:
   - name: nginx
     image: nginx
-    volumeMounts:
+    volumeMounts: # docker run -v hostpath:contaierpath
     - name: ebs-static
       mountPath: /usr/share/nginx/html
   volumes:
   - name: ebs-static
-    persistentVolumeClaim: 
+    persistentVolumeClaim:
       claimName: ebs-static
 ---
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  name: ebs-static
-  labels:
-    environment: dev
-    project: expense
+  name: nginx
 spec:
   type: LoadBalancer
   selector:
-    environment: dev
-    project: expense
+    purpose: ebs-static
   ports:
-  - name: ebs-static
+  - name: nginx-svc-port
     protocol: TCP
-    port: 80
-    targetPort: 80
-    nodePort: 30007 
-
+    port: 80 # service port
+    targetPort: 80 # container port
+    nodePort: 30007
