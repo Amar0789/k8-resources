@@ -10,9 +10,9 @@ spec:
   replicas: 3
   selector: 
     matchLabels:
-    project: expense
-    environment: dev
-    module: backend
+      project: expense
+      environment: dev
+      module: backend
   template:
     metadata:
       labels:
