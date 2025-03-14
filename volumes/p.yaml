@@ -1,26 +1,8 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: sets
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: expense
   labels:
     project: expense
     environment: dev
-    module: backend
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      project: expense
-      environment: dev
-      module: backend
-  template:
-    metadata:
-      labels:
-        project: expense
-        environment: dev
-        module: backend
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-
+    
