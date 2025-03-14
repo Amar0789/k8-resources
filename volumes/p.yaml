@@ -5,10 +5,8 @@ metadata:
   labels:
     project: expense
     environment: dev
+    module: backend
 spec:
   containers:
   - name: nginx
     image: nginx
-  - name: almalinux
-    image: almalinux
-    command: ["sleep","100"]
