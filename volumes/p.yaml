@@ -25,8 +25,8 @@ spec:
     project: expense
     environment: dev
     module: backend
-ports:
-- name: services
-  protocol: TCP
-  port: 80
-  targetPort: 80 
+  ports:
+  - name: services
+    protocol: TCP
+    port: 80
+    targetPort: 80 
