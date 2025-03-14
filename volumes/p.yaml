@@ -1,15 +1,11 @@
 apiVersion: v1
 kind: Pod
-metadata: 
-  name: expense
-  annotations:
-    project: expense
-    environment: dev
-    module: backend
+metadata:
+  name: config
 spec:
   containers:
   - name: nginx
     image: nginx
     envFrom:
-    - configMapRef
-      name: nginx-config
+    - configMapRef:
+        name: nginx-config
