@@ -20,7 +20,7 @@ metadata:
     environment: dev
     module: backend
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     labels:
     project: expense
