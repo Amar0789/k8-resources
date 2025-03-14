@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: ebs-static
 spec:
-  accesModes:   
+  accessModes:   
   - ReadriteOnce
   capacity:
     storage: 20Gi
@@ -17,7 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: ebs-static
 spec:
-  accesModes:   
+  accessModes:   
   - ReadriteOnce
   storageClassName: ""
   volumeName: ebs-static
@@ -61,6 +61,6 @@ spec:
   - name: ebs-static
     protocol: TCP
     port: 80
-    targetport: 80
+    targetPort: 80
     nodePort: 30007 
 
