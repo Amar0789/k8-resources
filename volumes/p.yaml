@@ -34,7 +34,7 @@ metadata:
     project: expense
 spec:
   nodeSelector:
-    topology.Kubernetes.io/zone: us-east-1d
+    topology.kubernetes.io/zone: us-east-1d
   containers:
   - name: nginx
     image: nginx
@@ -54,7 +54,7 @@ metadata:
     environment: dev
     project: expense
 spec:
-  type: LoadBalanacer
+  type: LoadBalancer
   selector:
     environment: dev
     project: expense
