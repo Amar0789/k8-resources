@@ -4,11 +4,11 @@ metadata:
   name: ebs-static
 spec:
   accessModes:   
-  - ReadriteOnce
+  - ReadWriteOnce
   capacity:
     storage: 20Gi
   csi:
-    drivers: csi.ebs.aws.com
+    driver: csi.ebs.aws.com
     fsType: ext4
     volumeHandle: vol-0b547173b784b1c72
 ---
@@ -18,7 +18,7 @@ metadata:
   name: ebs-static
 spec:
   accessModes:   
-  - ReadriteOnce
+  - ReadWriteOnce
   storageClassName: ""
   volumeName: ebs-static
   resources:
