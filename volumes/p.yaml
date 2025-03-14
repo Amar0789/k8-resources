@@ -1,46 +1,66 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata: 
-  name: expense
-  labels:
-    project: expense
-    environment: dev
-    module: backend
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ebs-static
 spec:
-  replicas: 3
-  selector: 
-    matchLabels:
-      project: expense
-      environment: dev
-      module: backend
-  template:
-    metadata:
-      labels:
-        project: expense
-        environment: dev
-        module: backend
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
+  accesModes:   
+  - ReadriteOnce
+  capacity:
+    storage: 20Gi
+  csi:
+    drivers: csi.ebs.aws.com
+    fsType: ext4
+    volumeHandle: vol-0b547173b784b1c72
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-static
+spec:
+  accesModes:   
+  - ReadriteOnce
+  storageClassName: ""
+  volumeName: ebs-static
+  resources:
+    requests:
+      storage: Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ebs-static
+  labels:
+    environment: dev
+    project: expense
+spec:
+  nodeSelector:
+    topology.Kubernetes.io/zone: us-east-1d
+  containers:
+  - name: nginx
+    image: nginx
+    volummeMounts:
+    - name: ebs-static
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: ebs-static
+    persistentVolumeClaim: 
+      claimName: ebs-static
 ---
 apiVersion: v1
 kind: Service
-metadata: 
-  name: expense
+metadata:
+  name: ebs-static
   labels:
-    project: expense
     environment: dev
-    module: backend
+    project: expense
 spec:
-  type: LoadBalancer
   selector:
-    labels:
-    project: expense
     environment: dev
-    module: backend
+    project: expense
   ports:
-  - name: services
+  - name: ebs-static
     protocol: TCP
     port: 80
-    targetPort: 80 
+    targetport: 80
+    nodePort: 30007 
+
