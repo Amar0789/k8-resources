@@ -14,7 +14,7 @@ kind: Service
 metadata:
   name: svcc
 spec:
-  type: nodePort
+  type: NodePort
   selector:
     comp: back
   ports:
