@@ -4,6 +4,7 @@ metadata:
   name: multi-pods
   labels:
     component: backend
+  namespace: expense
 spec:
   containers:
   - name: nginx
