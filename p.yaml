@@ -1,21 +1,7 @@
 apiVersion: v1
-kind: Pod
+kind: configMap
 metadata:
   name: multi-pods
-  labels:
-    component: backend
-  namespace: expense
-  annotations:
-    build_url: something
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    resources:
-      requests:
-        cpu: 200Mi
-        memory: 50m
-      limits: 
-        cpu: 300Mi
-        memory: 65m
-        
+data:
+  name: Amar
+
