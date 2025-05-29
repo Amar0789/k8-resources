@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        comp: labels
+        comp: back
     spec:
       containers:
       - name: nginx
