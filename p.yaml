@@ -5,10 +5,9 @@ metadata:
   labels:
     component: backend
   namespace: expense
+  annotations:
+    build_url: something
 spec:
   containers:
   - name: nginx
     image: nginx
-  - name: c2
-    image: almalinux
-    command: ["sleep", "100"]
