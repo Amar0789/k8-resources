@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx
   labels:
-    comp: back
+    compo: back
 spec:
   containers:
   - name: nginx
@@ -12,14 +12,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: svcc
+  name: svc
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
-    comp: back
+    compo: back
   ports:
-  - name: map
-    protocol: TCP
+  - name: name
     port: 80
     targetPort: 80
     nodePort: 30001
+    
